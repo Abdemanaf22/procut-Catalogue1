@@ -840,7 +840,11 @@ async function loadData(){
       name:cleanName(r.name),
       rate:r.rate,
       cat:(r.cat||'').toString().trim(),
-      code:(r.code||'').toString().trim()
+      code:(r.code||'').toString().trim(),
+      'whole sale deeler price':(r['whole sale deeler price']||'').toString().trim(),
+      'sub dealer':(r['sub dealer']||'').toString().trim(),
+      'retailer':(r['retailer']||'').toString().trim(),
+      'end user':(r['end user']||'').toString().trim()
     })).filter(p=>p.name&&p.name.toLowerCase()!=='cellimage'&&p.img&&p.img.startsWith('http'));
     console.log('Loaded',allProducts.length,'products');
   }catch(e){
